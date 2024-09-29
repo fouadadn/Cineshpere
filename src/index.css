@@ -1,13 +1,48 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.loginBg{
+    background-image: url(../src/assets/Login.jpg);
+    background-position: center;
+    background-size: contain;
+}
+body{
+  overflow-x:hidden ;
+  background-color: rgb(0, 0, 0);
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+.slick-dots li.slick-active button:before {
+    color:#7300FF !important;
+    font-size: 20px !important;
+  }
+  .slick-dots li button:before {
+    color:#a17eff !important;
+    font-size: 20px !important;
+    
+  }
+  .slick-dots{
+    position: absolute  !important;
+    bottom: 20px !important;
+    z-index: 999;
+    
+  }
+  .bigSlider > div{
+    height: 750px;
+  }
+
+  @media screen and (max-width:1300px) {
+    .bigSlider > div{
+      height: auto;
+    }
+  
+  }
+  
+  .release{
+    display: none !important;
+
+  }
+  .hhh{
+    z-index: 9999;
+  }
