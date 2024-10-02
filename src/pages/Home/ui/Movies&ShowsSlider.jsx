@@ -101,7 +101,7 @@ export default function MovieAndshowsSlider({ title, moviesorshows }) {
     <div className="text-white space-y-10 px-10 z-50 hhh  ">
       <h1 className="text-2xl font-bold ">{title}</h1>
       <Swiper
-      // slidesPerView={6}
+      slidesPerView={6}
       navigation
       freeMode={{enabled : true}}
        modules={[Navigation, Pagination, Scrollbar, A11y, FreeMode]}>
