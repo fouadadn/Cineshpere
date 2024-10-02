@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
+// Import Swiper React components
+
+
+import Slider from "react-slick"
+
+
 
 import Nav from "../../nav";
 
@@ -7,17 +12,16 @@ import MovieInfo from "./MovieInfo";
 
 
 
-export default function HomePageSlider({ movieDetail }) {
+export default function HomePageSlider({ movieDetail , genre}) {
 
     const [movieIndex, setMovieIndex] = useState(0)
-
-    const [genre, setGenre] = useState()
 
     var settings = {
         dots: true,
         infinite: true,
         speed: 500,
         // autoplay: true,
+        // fade : true,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
@@ -27,11 +31,7 @@ export default function HomePageSlider({ movieDetail }) {
     };
     const Movies5 = movieDetail.slice(6, 11)
 
-    useEffect(() => {
-        fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=091d4817f9045622142ffd67a08b2d15&language=en-US&page=1')
-            .then(res => res.json())
-            .then(res => setGenre(res.genres))
-    }, [movieIndex])
+    
 
     return (
         <div>
@@ -44,6 +44,8 @@ export default function HomePageSlider({ movieDetail }) {
                         Movies5.map((v, i) =>
                             <div key={i} >
                                 {movieIndex == i ? <MovieInfo
+                                yearDisplay={'block'}
+                                    position={'absolute'}
                                     name={[v.title, v.name]} year={[v.release_date, v.first_air_date]}
                                     Genre={[genre.map((va) => va.id == v.genre_ids[0] ? va.name : ''), genre.map((va) => va.id == v.genre_ids[1] ? va.name : '')]}
                                     desc={v.overview} /> : ''}
