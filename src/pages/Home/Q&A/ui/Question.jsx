@@ -10,7 +10,7 @@ export default function Question() {
     }
 
     return (
-        <div className='flex flex-wrap justify-center gap-5 items-center'>
+        <div className='flex flex-wrap justify-center gap-5 items-center px-4'>
 
             <div
                 className='px-10 py-5  bg-[#30007730] w-[550px] cursor-pointer rounded-xl '
@@ -137,8 +137,8 @@ export default function Question() {
                         }`}
                 >
                     <p className='text-white mt-4'>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, voluptatibus?           
-                                </p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, voluptatibus?
+                    </p>
                 </div>
             </div>
 
@@ -163,8 +163,8 @@ export default function Question() {
                         }`}
                 >
                     <p className='text-white mt-4'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, similique?
-                                     </p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, similique?
+                    </p>
                 </div>
             </div>
 
@@ -189,8 +189,8 @@ export default function Question() {
                         }`}
                 >
                     <p className='text-white mt-4'>
-                    ydk fih xkon kaynssa password
-                                     </p>
+                        ydk fih xkon kaynssa password
+                    </p>
                 </div>
             </div>
 
@@ -215,8 +215,8 @@ export default function Question() {
                         }`}
                 >
                     <p className='text-white mt-4'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, similique?
-                                     </p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, similique?
+                    </p>
                 </div>
             </div>
         </div>

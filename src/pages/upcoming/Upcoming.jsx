@@ -22,10 +22,10 @@ export default function Upcoming() {
             </div>
             <img src={MoviesPosters} alt="" className=" " />
 
-            <div className='text-white z-50 absolute bottom-32 w-full items-center flex justify-between px-10'>
+            <div className='text-white z-50 relative  bottom-20 w-full items-center flex justify-between px-4 lg:px-10'>
                 <div>
-                    <h1 className='text-4xl font-bold'>Get Ready for Action: Upcoming <br /> Blockbusters You Can't Miss!</h1>
-                    <p>Prepare for an adrenaline-packed season with our upcoming blockbusters! <br /> From thrilling action
+                    <h1 className=' text-lg lg:text-4xl font-bold'>Get Ready for Action: Upcoming <br /> Blockbusters You Can't Miss!</h1>
+                    <p className='hidden lg:block'>Prepare for an adrenaline-packed season with our upcoming blockbusters! <br /> From thrilling action
                         sequences to heart-pounding adventures, these movies <br /> will keep you on the edge of your seat.
                         Mark your calendars for an unforgettable <br /> cinematic experience!
                     </p>
@@ -40,7 +40,7 @@ export default function Upcoming() {
             </div>
 
 
-            <div className='z-50 mt-32 text-white px-10'>
+            <div className='z-50 mt-3 text-white px-4 lg:px-10'>
                 <h1 className='text-3xl font-bold'>UpComing Movies</h1>
                 <div className='mt-10'>
                     <span className='text-2xl font-semibold '>October</span>
@@ -49,14 +49,14 @@ export default function Upcoming() {
 
                 {
                     upcoming.map(v => v.release_date.split('-')[1] === '10' ?
-                        <div className='flex gap-6 items-center m-10'>
+                        <div className='flex gap-6 items-center my-10'>
                             <div>
                                 <span className='text-3xl font-bold border-[#7300FF] border-2 p-6 rounded-full text-[#7300FF] bg-[#7300FF40] '>{v.release_date.split('-')[2]}</span>
                             </div>
                             <div className='flex gap-3'>
                                 <img src={`https://image.tmdb.org/t/p/w200/${v.backdrop_path}`} alt="" className="w-32 rounded-2xl" />
                                 <div>
-                                    <h2 className='text-xl font-bold'> {v.title}</h2>
+                                    <h2 className=' md:text-xl font-bold'> {v.title}</h2>
                                 </div>
                             </div>
                         </div> : '')

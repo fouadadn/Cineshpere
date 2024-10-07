@@ -9,7 +9,7 @@ export default function ExploreGenres({ Genre, backdropImage }) {
         return (
             <div className="flex justify-center">
                 <button
-                    className='border border-white rounded-full p-2 relative bottom-[108px] left-7 z-50 bg-[#a473ff50]'
+                    className='border border-white rounded-full p-2 absolute bottom-0 right-[40%] md:right-[43%] lg:right-[50%] z-50 bg-[#a473ff50]'
                     onClick={onClick}>
                     <ChevronRight color="#ffffff" />
                 </button>
@@ -23,7 +23,7 @@ export default function ExploreGenres({ Genre, backdropImage }) {
         return (
             <div className="flex justify-center ">
                 <button
-                    className='border border-white rounded-full p-2 relative top-56 right-7  z-50 bg-[#a473ff50]'
+                    className='border border-white rounded-full p-2 absolute bottom-0 left-[36%] md:left-[40%] lg:eft-[45%] z-50 bg-[#a473ff50]'
                     onClick={onClick}>
                     <ChevronLeft color="#ffffff" />
                 </button>
@@ -102,12 +102,12 @@ export default function ExploreGenres({ Genre, backdropImage }) {
 
     let listSlice = backdropImage.slice(0, 19)
     return (
-        <div className="text-white px-10 pt-32">
+        <div className="text-white px-4 lg:px-10 pt-32">
             <h1 className="text-3xl font-bold">Explore Genres</h1>
             <p>See Wide Range of genres you like</p>
             
             <div className="relative top-">
-                <div className="z-50  px-10 ">
+                <div className="z-50  px-4 lg:px-10 ">
                     <Slider {...settings} >
                         {
                             listSlice.map((v, i) =>

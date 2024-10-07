@@ -10,10 +10,10 @@ export default function Movies({ title, moviesorshows, genre, media_type }) {
     
 
     return (
-        <div className="text-white space-y-10 px-10 z-50 hhh pt-10 ">
+        <div className="text-white space-y-10 px-4  lg:px-10 z-50 hhh pt-10 ">
             <h1 className="text-2xl font-bold ">{title}</h1>
 
-            <div className="flex overflow-auto gap-8 py-4  [&::-webkit-scrollbar]:h-1
+            <div className="flex overflow-auto gap-4 lg:gap-8 py-4  [&::-webkit-scrollbar]:h-1
                     [&::-webkit-scrollbar-track]:rounded-full
                     [&::-webkit-scrollbar-track]:bg-gray-100
                     [&::-webkit-scrollbar-thumb]:rounded-full 

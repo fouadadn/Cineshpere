@@ -8,7 +8,7 @@ import profil from '../assets/profil.jpg'
 
 export default function Info() {
 
-    window.scrollTo(0, 0)
+    // window.scrollTo(0, 0)
 
     const [movie, setMovie] = useState({})
     const [cast, setCast] = useState([])
@@ -132,9 +132,9 @@ export default function Info() {
                 <div className="absolute h-[110vh] w-full bg-gradient-to-t z-30 from-[#000000]  to-90% to-transparent">
                 </div>
                 <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="" className=" " />
-                <div className="absolute bottom-32 px-10 z-50" >
+                <div className="absolute  bottom-0 md:bottom-32 px-4 lg:px-10 z-50" >
                     <p>{media_type == 'movie' ? year : yearTv}</p>
-                    <h1 className=" text-5xl font-semibold mb-3">{media_type == 'movie' ? movie.title : movie.name}</h1>
+                    <h1 className=" text-3xl lg:text-5xl font-semibold mb-3">{media_type == 'movie' ? movie.title : movie.name}</h1>
                     <div className="flex gap-2 font-semibold text-lg mb-2">
                         {
                             media_type === 'tv' ? <p>{movie.number_of_seasons} Seasons</p> : ''
@@ -166,12 +166,12 @@ export default function Info() {
                 </div>
             </div>
 
-            <div className="6 w-full bg-black z-50 px-10">
+            <div className="6 w-full bg-black z-50 mt-5 md:mt-0 px-4 lg:px-10">
                 <h1 className="text-white text-4xl font-semibold my-3">Synopsis</h1>
-                <p className="text-xl">{movie.overview}</p>
+                <p className="ztext-xl">{movie.overview}</p>
             </div>
 
-            <div className="px-10 my-24 z-50">
+            <div className="px-4 lg:px-10 my-24 z-50">
                 {/* cast display */}
                 <h1 className="text-4xl font-bold my-3">Cast</h1>
                 <div className="flex gap-10 scroll overflow-auto py-4
@@ -199,7 +199,7 @@ export default function Info() {
 
             {/* watch Triller */}
             <div>
-                <h1 className="text-4xl font-bold my-3 px-10">Official Trailer</h1>
+                <h1 className="text-4xl font-bold my-3 px-4 lg:px-10">Official Trailer</h1>
                 <div className="flex justify-center mb-32 mt-10 " id="trailer">
                     <div className="w-[80%] h-[600px]">
 
@@ -212,7 +212,7 @@ export default function Info() {
             </div>
 
 
-            <div className="mt-32 px-10">
+            <div className="mt-32 px-4 lg:px-10">
                 <h1 className="text-4xl font-semibold py-6">Similar {media_type == 'movie' ? 'Movies' : 'Shows'} for you</h1>
 
                 <div className="flex gap-6 overflow-auto [&::-webkit-scrollbar]:h-1
@@ -224,10 +224,10 @@ export default function Info() {
                     dark:[&::-webkit-scrollbar-thumb]:bg-[#7300FF] py-6">
                     {
                         similar.map(v =>
-                            <a href="" className="w-[500px] flex-shrink-0 " onClick={() => {
+                            <a href="" className="flex-shrink-0 " onClick={() => {
                                 navigate(`/${v?.id}?type=${v?.media_type}`)
                             }}>
-                                <img src={`https://image.tmdb.org/t/p/original/${v.backdrop_path}`} alt="" className="w-96 rounded-xl" />
+                                <img src={`https://image.tmdb.org/t/p/original/${v.backdrop_path}`} alt="" className=" w-72 md:w-96 rounded-xl" />
                                 <div>
                                     <h1 className="text-xl font-semibold">{media_type == 'movie' ? v.title : v.name}</h1>
                                     <div className="flex items-center gap-2">
@@ -257,18 +257,18 @@ export default function Info() {
                 </div>
             </div>
 
-            <div className="px-10 py-10">
+            <div className="lg:px-10 px-4 py-10">
                 <h1 className="text-4xl font-semibold  py-10">Reviews</h1>
-                <div className="flex gap-6 overflow-auto [&::-webkit-scrollbar]:h-2
+                <div className="flex gap-6 overflow-auto [&::-webkit-scrollbar]:h-1
                     [&::-webkit-scrollbar-track]:rounded-full
                     [&::-webkit-scrollbar-track]:bg-gray-100
                     [&::-webkit-scrollbar-thumb]:rounded-full 
                     [&::-webkit-scrollbar-thumb]:bg-gray-300
-                    dark:[&::-webkit-scrollbar-track]:bg-neutral-700
-                    dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 py-6">
+                    dark:[&::-webkit-scrollbar-track]:bg-[#7300FF30]
+                    dark:[&::-webkit-scrollbar-thumb]:bg-[#7300FF] py-6">
                     {
                         review && review.length > 0 ? review.map(v =>
-                            <div className=" border-2 shadow-[#7300FF] shadow-md border-[#7300FF] rounded-3xl w-[440px] flex-shrink-0 p-3">
+                            <div className=" border-2 shadow-[#7300FF] shadow-md border-[#7300FF] rounded-3xl w-[350px] md:w-[440px] flex-shrink-0 p-3">
                                 <div className="flex items-center gap-3 bg-[#7300FF30] rounded-3xl px-2 py-1">
                                     <div className="border-2 border-[#7300FF] rounded-full w-20 h-20 overflow-hidden p-1">
                                         <img src={v.author_details.avatar_path ? `https://image.tmdb.org/t/p/w200/${v.author_details.avatar_path}` : profil} alt="" className="w-20 h-18 rounded-full" />

@@ -17,9 +17,9 @@ export default function MovieInfo({ year, name, Genre, desc, position, divDispla
     Genre[1].forEach(v => xi7aja += v)
 
     return (
-        <div className={`${position} bottom-16 md:bottom-20  left-10 text-white z-50 t9iil `}>
+        <div className={`${position} bottom-16 md:bottom-20  left-3 lg:left-10 text-white z-50 t9iil px-4`}>
             <span className={`text-sm hidden sm:${yearDisplay}`}>{y1 === undefined ? String(y2).substring(0, 4) : String(y1).substring(0, 4)}</span>
-            <h1 className="text-3xl text-nowrap">{name}</h1>
+            <h1 className="text-3xl ">{name}</h1>
             <p className={`hidden sm:flex ${genreStyle}`}>{genre1} {xi7aja === '' ? '' : <Dot />} {genre2}</p>
             <p className={`w-[370px] sm:w-[450px] md:w-[470px] text-xs sm:text-base ${descDisplay}`}>{desc}</p>
 

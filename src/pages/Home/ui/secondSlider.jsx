@@ -106,7 +106,6 @@ export default function SecondSlider() {
 
     return (
         <div className=" mt-32 mb-48">
-        
             <div className="">
                     {tvShows.map((v, i) => i == ShowIndex ? <img key={i} src={`https://image.tmdb.org/t/p/original/${v.backdrop_path}`} className="t9iil absolute brightness-75" /> : '')}
                 <div className="flex flex-col items-center lg:flex-row justify-around z-50 relative md:top-24  xl:top-56">
