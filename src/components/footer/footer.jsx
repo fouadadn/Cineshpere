@@ -1,5 +1,5 @@
 
-import footerImage from '/home/fouad/Desktop/Documents/project/React-Apps/cinesphere/src/pages/assets/Footer Email.png'
+import footerImage from '../assets/footer.png'
 
 
 export default function Footer() {
@@ -30,7 +30,7 @@ export default function Footer() {
 
                 <div className="flex justify-center mt-6">
                     <div>
-                        ⓒCinesphere Movies & Tv Shows , Made by <a href="" className="text-[#7300FF]" >Fouad Adnan</a>
+                        ⓒCinesphere Movies & Tv Shows , Made by <a href="https://www.instagram.com/fouad_sksk/profilecard/?igsh=dGViNDU4NnY2cG9t" className="text-[#7300FF]" >Fouad Adnan</a>
                     </div>
                 </div>
             </footer>

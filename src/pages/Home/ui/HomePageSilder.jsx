@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 // Import Swiper React components
 
 
@@ -49,7 +49,7 @@ export default function HomePageSlider({ movieDetail , genre}) {
                     }
                     <Slider {...settings} >
                         {Movies5.map((v, i) =>
-                            <img key={i} src={`https://image.tmdb.org/t/p/original/${v.backdrop_path}`} />
+                            <img key={i} src={`https://image.tmdb.org/t/p/original/${v.backdrop_path}`} alt="" />
                         )}
                     </Slider>
                 </div>
