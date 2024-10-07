@@ -22,6 +22,19 @@ export default function HomePageSlider({ movieDetail , genre}) {
         arrows: false,
         className: 'bigSlider',
         afterChange: (i) => setMovieIndex(i),
+        responsive: [
+            
+                
+            {
+                breakpoint: 760,
+                settings: {
+                    slidesToShow: 1,
+                    fade: true
+                    
+                }
+            }
+
+        ]
 
     };
     const Movies5 = movieDetail.slice(0, 5)
