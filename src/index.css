@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 
+html{
+  scroll-behavior: smooth;
+}
 .loginBg{
-    background-image: url(../src/assets/Login.jpg);
+    background-image: url(./pages/assets/Login.jpg);
     background-position: center;
     background-size: contain;
 }
@@ -95,3 +98,7 @@ body{
   .hhhh{
     transition: all 3s;
   }
+
+  /* .slick-initialized{
+    position: relative;
+  } */

@@ -6,7 +6,6 @@ import { useState } from 'react';
 export default function Account() {
 
     const [checkSign, setCheckSign] = useState(0)
-    const [purpla, setpurple] = useState('0')
 
     let bold;
     let bold2;
@@ -43,7 +42,7 @@ export default function Account() {
                 </div>
                 <div className='duration-700'>
                     {
-                        checkSign == 0 ? <Login className='duration-700' /> : <SignUp className='duration-700'/>
+                        checkSign === 0 ? <Login className='duration-700' /> : <SignUp className='duration-700'/>
                     }
                 </div>
 

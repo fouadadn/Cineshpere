@@ -2,7 +2,7 @@ import { Facebook, Mail, LockKeyhole, Twitter, Instagram, UserRound } from 'luci
 
 function SignUp() {
     return (
-        <div className=''>
+        <div className='t9iil'>
             <p className='text-white text-sm font-light text-center'>Register Now to watch your favourite <br /> shows</p>
             <div className='text-white text-center my-3'>
                 <span>Or</span>

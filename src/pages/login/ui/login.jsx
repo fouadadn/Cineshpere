@@ -3,7 +3,7 @@ import { Facebook, Mail, LockKeyhole, Twitter, Instagram } from 'lucide-react';
 
 function Login() {
     return (
-        <div className=''>
+        <div className='t9iil'>
             <p className='text-white text-sm font-light text-center'>Log in to watch your favourite shows</p>
             <div className='flex gap-2 justify-around mt-6'>
                 <button className='backdrop-blur-sm px-12 py-4 rounded-xl border border-[#ffffff30]'>

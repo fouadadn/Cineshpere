@@ -6,7 +6,7 @@ import MovieInfo from "./MovieInfo";
 
 export default function SecondSlider() {
 
-    const [genre, setGenre] = useState()
+    const [genre, setGenre] = useState([])
 
 
     useEffect(() => {
@@ -16,10 +16,11 @@ export default function SecondSlider() {
     }, [])
 
     function SampleNextArrow(props) {
-        const { onClick } = props;
+        const { onClick , className } = props;
         return (
             <button
-                className='border border-white rounded-full p-2 absolute right-0 -bottom-20 z-50 bg-[#a473ff50]'
+                className={` border border-white rounded-full absolute -bottom-32 right-0 p-2 r z-50 bg-[#a473ff50]`}
+                // className='border border-white rounded-full p-2 r z-50 bg-[#a473ff50]'
                 onClick={onClick}>
                 <ChevronRight color="#ffffff" />
             </button>
@@ -30,7 +31,7 @@ export default function SecondSlider() {
         const { onClick } = props;
         return (
             <button
-                className='border border-white rounded-full p-2 absolute right-16 -bottom-20 z-50 bg-[#a473ff50]'
+                className={` border border-white rounded-full absolute -bottom-32 right-16 p-2 r z-50 bg-[#a473ff50]`}
                 onClick={onClick}>
                 <ChevronLeft color="#ffffff" />
             </button>
@@ -104,26 +105,25 @@ export default function SecondSlider() {
     }, [])
 
     return (
-        <div className="mt-32 mb-48">
-            <div className="absolute h-[120vh] w-full bg-gradient-to-r z-30 from-[#000000]  to-70% to-transparent">
-            </div>
+        <div className=" mt-32 mb-48">
+        
             <div className="">
-                    {tvShows.map((v, i) => i == ShowIndex ? <img key={i} src={`https://image.tmdb.org/t/p/original/${v.backdrop_path}`} className="t9iil absolute" /> : '')}
-                
-                <div className="flex flex-col items-center lg:flex-row justify-around z-50 relative top- md:top-24  xl:top-56">
-                    <div className="relative z-50 ">
+                    {tvShows.map((v, i) => i == ShowIndex ? <img key={i} src={`https://image.tmdb.org/t/p/original/${v.backdrop_path}`} className="t9iil absolute brightness-75" /> : '')}
+                <div className="flex flex-col items-center lg:flex-row justify-around z-50 relative md:top-24  xl:top-56">
+                    <div className=" z-50 ">
                         {
                             tvShows.map((v, i) =>
                                 <div key={i} >
                                     {ShowIndex == i ? <MovieInfo
                                         name={[v.title, v.name]} year={[v.release_date, v.first_air_date]}
-                                        Genre={[genre.map((va) => va.id == v.genre_ids[0] ? va.name : ''), genre.map((va) => va.id == v.genre_ids[1] ? va.name : '')]}
+                                        Genre={[genre?.map((va) => va.id == v.genre_ids[0] ? va.name : ''), genre?.map((va) => va.id == v.genre_ids[1] ? va.name : '')]}
                                         desc={v.overview} /> : ''}
                                 </div>
                             )
                         }
                     </div>
-                    <div className=" lg:w-[50%] relative left-10 lg:left-0">
+                    
+                    <div className=" lg:w-[50%]  left-10 lg:left-0 relative" >
                         <Slider {...settings} >
                             {tvShows.map((v, i) =>
                                 <div key={i} className="">

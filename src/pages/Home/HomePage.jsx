@@ -3,12 +3,9 @@ import { useEffect, useState } from 'react';
 import MovieAndshowsSlider from './ui/Movies&ShowsSlider';
 import SecondSlider from './ui/secondSlider';
 import Movies from './ui/backdropMandS';
-
-import Account from '../login/Acc';
-
 import ExploreGenres from './ui/exploreGenre';
-
 import Questions from '../Home/Q&A/Questions'
+import Footer from '../../components/footer/footer';
 
 export default function HomePage() {
 
@@ -20,38 +17,30 @@ export default function HomePage() {
 
 
     useEffect(() => {
-         async function fetchdata(){
+        async function fetchdata() {
 
-            await fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=091d4817f9045622142ffd67a08b2d15&language=en-US&page=1')
-                 .then(response => response.json())
-                 .then(response => setMovies(response.results))
-                 .catch(err => console.error(err));
-         }
+            await fetch('https://api.themoviedb.org/3/trending/all/week?api_key=091d4817f9045622142ffd67a08b2d15&language=en-US&page=2')
+                .then(response => response.json())
+                .then(response => setMovies(response.results))
+                .catch(err => console.error(err));
+        }
 
-         fetchdata()
-
-    }, [])
-    useEffect(() => {
+        fetchdata()
 
         fetch('https://api.themoviedb.org/3/trending/all/week?api_key=091d4817f9045622142ffd67a08b2d15&language=en-US&page=1')
             .then(response => response.json())
             .then(response => setTopMovies(response.results))
             .catch(err => console.error(err));
-    }, [])
 
-    useEffect(() => {
         fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=091d4817f9045622142ffd67a08b2d15&language=en-US&page=1')
             .then(res => res.json())
             .then(res => setGenre(res.genres))
-    }, [])
 
-    useEffect(() => {
+
         fetch('https://api.themoviedb.org/3/genre/tv/list?api_key=091d4817f9045622142ffd67a08b2d15')
             .then(res => res.json())
             .then(res => setShowsGenre(res.genres))
-    }, [])
 
-    useEffect(() => {
 
         fetch('https://api.themoviedb.org/3/tv/top_rated?api_key=091d4817f9045622142ffd67a08b2d15')
             .then(response => response.json())
@@ -68,16 +57,24 @@ export default function HomePage() {
                 <MovieAndshowsSlider title={'Latest Release'} moviesorshows={movies} />
                 <MovieAndshowsSlider title={'Trending Movies & Shows'} moviesorshows={topmovies} />
             </div>
-            <SecondSlider />
-            <div className='space-y-10 mt-14 md:mt-80 z-50'>
-                <Movies moviesorshows={movies} title={'Movies'} genre={genre} />
-                <Movies moviesorshows={shows} title={'Shows'} genre={Showsgenre} />
+
+
+
+
+            <div>
+                <SecondSlider />
             </div>
-            <ExploreGenres Genre={genre} backdropImage={movies}/>
+            <div className='space-y-10 mt-14 md:mt-80 z-50 bg-black'>
+                <Movies moviesorshows={movies} title={'Movies'} genre={genre} media_type={'movie'} />
+                <Movies moviesorshows={shows} title={'Shows'} genre={Showsgenre} media_type={'tv'} />
+            </div>
+            <ExploreGenres Genre={genre} backdropImage={movies} />
 
-            <div className='relative top-[500px]'>
-
-                <Questions/>
+            <div className=''>
+                <Questions />
+            </div>
+            <div>
+                <Footer />
             </div>
 
         </div>
