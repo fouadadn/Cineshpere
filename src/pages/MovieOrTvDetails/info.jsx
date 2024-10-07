@@ -175,13 +175,13 @@ export default function Info() {
                 {/* cast display */}
                 <h1 className="text-4xl font-bold my-3">Cast</h1>
                 <div className="flex gap-10 scroll overflow-auto py-4
-                    [&::-webkit-scrollbar]:h-2
+                    [&::-webkit-scrollbar]:h-1
                     [&::-webkit-scrollbar-track]:rounded-full
                     [&::-webkit-scrollbar-track]:bg-gray-100
                     [&::-webkit-scrollbar-thumb]:rounded-full 
                     [&::-webkit-scrollbar-thumb]:bg-gray-300
-                    dark:[&::-webkit-scrollbar-track]:bg-neutral-700
-                    dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
+                    dark:[&::-webkit-scrollbar-track]:bg-[#7300FF10]
+                    dark:[&::-webkit-scrollbar-thumb]:bg-[#7300FF]">
                     {
                         cast.map(c =>
                             <div className="flex items-center justify-center gap-2" >
@@ -215,13 +215,13 @@ export default function Info() {
             <div className="mt-32 px-10">
                 <h1 className="text-4xl font-semibold py-6">Similar {media_type == 'movie' ? 'Movies' : 'Shows'} for you</h1>
 
-                <div className="flex gap-6 overflow-auto [&::-webkit-scrollbar]:h-2
+                <div className="flex gap-6 overflow-auto [&::-webkit-scrollbar]:h-1
                     [&::-webkit-scrollbar-track]:rounded-full
                     [&::-webkit-scrollbar-track]:bg-gray-100
                     [&::-webkit-scrollbar-thumb]:rounded-full 
                     [&::-webkit-scrollbar-thumb]:bg-gray-300
-                    dark:[&::-webkit-scrollbar-track]:bg-neutral-700
-                    dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 py-6">
+                    dark:[&::-webkit-scrollbar-track]:bg-[#7300FF10]
+                    dark:[&::-webkit-scrollbar-thumb]:bg-[#7300FF] py-6">
                     {
                         similar.map(v =>
                             <a href="" className="w-[500px] flex-shrink-0 " onClick={() => {

@@ -36,7 +36,7 @@ export default function Nav() {
         <div className='relative'>
             
             <nav className='relative xl:absolute pl-0 lg:pl-20 w-full top-0 z-50 text-white gap-28 justify-around xl:justify-start flex items-center py-5'>
-                <NavLink to={'/Home'}> 
+                <NavLink to={'/'}> 
                     <h1 className='text-4xl relative bottom-3'>
                         <span className='font- text-[#7300FF] text-6xl'>C</span>ine sphere
                     </h1>

@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
       <Nav></Nav>
       <Routes>
-        <Route path='/Home' element={<HomePage />}></Route>
+        <Route path='/' element={<HomePage />}></Route>
         <Route path='/:id' element={<Info />}></Route>
         <Route path='/Upcoming' element={<Upcoming />}></Route>
         <Route path='/Account' element={<Account />}></Route>
