@@ -7,7 +7,6 @@ import { useNavigate, NavLink } from 'react-router-dom';
 export default function Nav() {
     const [displaySearch, setDisplaySearch] = useState('hidden');
     const [film, setFilm] = useState('');
-    const [displayNav, setDispmayNav] = useState(false);
 
     const [multiple, setMutliple] = useState([])
 
@@ -17,10 +16,7 @@ export default function Nav() {
         setDisplaySearch(value === '' ? 'hidden' : 'block');
     }
 
-    function handledisplaynav() {
-        setDispmayNav(!displayNav)
-    }
-
+    
 
     const options = {
         method: 'GET',
@@ -40,58 +36,24 @@ export default function Nav() {
 
     return (
         <div className='relative'>
-
-            {/* <nav className='relative xl:absolute -pl-16 lg:pl-20 w-full top-0 z-50 text-white gap-28 justify-around xl:justify-start flex items-center py-5'>
-                <NavLink to={'/'}>
-                    <h1 className='text-4xl relative bottom-3'>
-                        <span className='font- text-[#7300FF] text-6xl'>C</span>ine sphere
-                    </h1>
-                </NavLink>
-                <div className='hidden xl:flex text-2xl gap-10 items-center duration-500'>
-                    <NavLink to={'/Upcoming'} className='hover:text-[#7300FF] duration-500'>Upcoming</NavLink>
-                    <a href="#" className='hover:text-[#7300FF] duration-500'>Shows</a>
-                    <a href="#" className='hover:text-[#7300FF] duration-500'>Fanart</a>
-                    <a href="#" className='hover:text-[#7300FF] duration-500'>Plans</a>
-                    <a href="#" className='hover:text-[#7300FF] duration-500'>Community</a>
-                    <NavLink to={'/Account'} className='hover:text-[#7300FF] duration-500'>Account</NavLink>
-
-                    <div className={`border bg-[#7300FF10] w-80  border-[#a473ff] rounded-xl `}>
-                        <input
-                            value={film}
-                            className={`bg-transparent outline-none text-white text-sm w-full px-6 py-3 `}
-                            type='search'
-                            placeholder='Search'
-                            onChange={handleInputChange}
-                        />
-                    </div>
-                    <div >
-                        <Search color='white' size={26} />
-
-                    </div>
-                </div>
-
-                <button className='block xl:hidden' onClick={handledisplaynav}>
-                    {displayNav ? <X className='duration-500 t9iil' /> : <Menu color='#ffffff' className='duration-500 t9iil' />}
-                </button>
-            </nav> */}
-            <header class="relative  lg:absolute z-50 flex flex-wrap lg:justify-start lg:flex-nowrap w-full text-sm py-3 md:py-5 ">
-                <nav class="max-w-[95rem] w-full mx-auto px-4 lg:flex md:items-center md:justify-between">
-                    <div class="flex items-center justify-between">
+            <header className="relative  lg:absolute z-50 flex flex-wrap lg:justify-start lg:flex-nowrap w-full text-sm py-3 md:py-5 ">
+                <nav className="max-w-[95rem] w-full mx-auto px-4 lg:flex md:items-center md:justify-between">
+                    <div className="flex items-center justify-between">
                         <NavLink to={'/'}>
                             <h1 className='text-4xl relative bottom-3 text-white text-nowrap'>
                                 <span className='font- text-[#7300FF] text-6xl'>C</span>ine sphere
                             </h1>
                         </NavLink>
-                        <div class="lg:hidden">
-                            <button type="button" class="hs-collapse-toggle relative size-7 flex justify-center items-center gap-x-2 rounded-lg border border-[#7300FF]  text-white shadow-sm hover:bg-[#7300FF80] focus:outline-none focus:bg-[#7300FF60] disabled:opacity-50 disabled:pointer-events-none" id="hs-navbar-example-collapse" aria-expanded="false" aria-controls="hs-navbar-example" aria-label="Toggle navigation" data-hs-collapse="#hs-navbar-example">
-                                <svg class="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6" /><line x1="3" x2="21" y1="12" y2="12" /><line x1="3" x2="21" y1="18" y2="18" /></svg>
-                                <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
-                                <span class="sr-only">Toggle navigation</span>
+                        <div className="lg:hidden">
+                            <button type="button" className="hs-collapse-toggle relative size-7 flex justify-center items-center gap-x-2 rounded-lg border border-[#7300FF]  text-white shadow-sm hover:bg-[#7300FF80] focus:outline-none focus:bg-[#7300FF60] disabled:opacity-50 disabled:pointer-events-none" id="hs-navbar-example-collapse" aria-expanded="false" aria-controls="hs-navbar-example" aria-label="Toggle navigation" data-hs-collapse="#hs-navbar-example">
+                                <svg className="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" x2="21" y1="6" y2="6" /><line x1="3" x2="21" y1="12" y2="12" /><line x1="3" x2="21" y1="18" y2="18" /></svg>
+                                <svg className="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+                                <span className="sr-only">Toggle navigation</span>
                             </button>
                         </div>
                     </div>
-                    <div id="hs-navbar-example" class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow lg:block text-white  lg:text-xl " aria-labelledby="hs-navbar-example-collapse">
-                        <div class="flex flex-col gap-5 mt-5 lg:flex-row lg:items-center lg:justify-end lg:mt-0 md:ps-5">
+                    <div id="hs-navbar-example" className="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow lg:block text-white  lg:text-xl " aria-labelledby="hs-navbar-example-collapse">
+                        <div className="flex flex-col gap-5 mt-5 lg:flex-row lg:items-center lg:justify-end lg:mt-0 md:ps-5">
                             <NavLink to={'/Upcoming'} className='hover:text-[#7300FF] duration-500'>Upcoming</NavLink>
                             <a href="#" className='hover:text-[#7300FF] duration-500'>Shows</a>
                             <a href="#" className='hover:text-[#7300FF] duration-500'>Fanart</a>

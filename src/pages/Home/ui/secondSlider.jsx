@@ -16,11 +16,10 @@ export default function SecondSlider() {
     }, [])
 
     function SampleNextArrow(props) {
-        const { onClick , className } = props;
+        const { onClick } = props;
         return (
             <button
                 className={` border border-white rounded-full absolute -bottom-32 right-0 p-2 r z-50 bg-[#a473ff50]`}
-                // className='border border-white rounded-full p-2 r z-50 bg-[#a473ff50]'
                 onClick={onClick}>
                 <ChevronRight color="#ffffff" />
             </button>
@@ -125,7 +124,7 @@ export default function SecondSlider() {
                     <div className=" lg:w-[50%]  left-10 lg:left-0 relative" >
                         <Slider {...settings} >
                             {tvShows.map((v, i) =>
-                                <div key={i} className="">
+                                <div key={i} >
                                     <img src={`https://image.tmdb.org/t/p/w300/${v.poster_path}`} alt="" className="w-32 lg:w-52 border-4 border-[#7300FF] rounded-tr-3xl rounded-bl-3xl" />
                                 </div>
                             )}

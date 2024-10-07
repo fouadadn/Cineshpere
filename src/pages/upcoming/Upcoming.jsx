@@ -48,8 +48,8 @@ export default function Upcoming() {
                 <hr className="border-[#a473ff90] " />
 
                 {
-                    upcoming.map(v => v.release_date.split('-')[1] === '10' ?
-                        <div className='flex gap-6 items-center my-10'>
+                    upcoming.map((v , i) => v.release_date.split('-')[1] === '10' ?
+                        <div key={i} className='flex gap-6 items-center my-10'>
                             <div>
                                 <span className='text-3xl font-bold border-[#7300FF] border-2 p-6 rounded-full text-[#7300FF] bg-[#7300FF40] '>{v.release_date.split('-')[2]}</span>
                             </div>

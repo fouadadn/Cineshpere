@@ -24,21 +24,21 @@ export default function MovieInfo({ year, name, Genre, desc, position, divDispla
             <p className={`w-[370px] sm:w-[450px] md:w-[470px] text-xs sm:text-base ${descDisplay}`}>{desc}</p>
 
             <div className={`flex gap-2 md:gap-4 mt-5 ${divDisplay}`}>
-                <a href=''>
+                <div href=''>
                     <button className='flex rounded-tr-xl bg-[#7300FF]  rounded-bl-xl py-1 px-2 md:px-4 md:py-2  gap-1'>
                         <Play strokeWidth={3} /><span className='text-nowrap'>Play Now</span>
                     </button>
-                </a>
-                <a href='' className='hidden sm:block'>
+                </div>
+                <div href='' className='hidden sm:block'>
                     <button className='flex rounded-tr-xl backdrop-blur-lg  bg-[#ffffff10] rounded-bl-xl py-1 px-2 md:px-4 md:py-2 gap-1'>
                         <Play strokeWidth={3} /><span className='text-nowrap'>Watch Trailer</span>
                     </button>
-                </a>
-                <a className='hidden sm:block'>
+                </div>
+                <div className='hidden sm:block'>
                     <button className='flex rounded-tr-xl bg-[#7300FF20] border border-white  rounded-bl-xl py-1 px-2 md:px-4 md:py-2 gap-1'>
                         <Bookmark strokeWidth={3} /><span className='text-nowrap'>Add to Wishlist</span>
                     </button>
-                </a>
+                </div>
             </div>
         </div>
     )

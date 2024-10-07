@@ -142,7 +142,7 @@ export default function Info() {
                         {
                             movie.genres ?
                                 movie.genres.map((v, i) =>
-                                    <span>
+                                    <span key={i}>
                                         <span>{v.name} </span>
                                         {movie.genres.length - 1 !== i ? <span><Dot className="inline-block" /></span> : ''}
                                     </span>
@@ -183,8 +183,8 @@ export default function Info() {
                     dark:[&::-webkit-scrollbar-track]:bg-[#7300FF10]
                     dark:[&::-webkit-scrollbar-thumb]:bg-[#7300FF]">
                     {
-                        cast.map(c =>
-                            <div className="flex items-center justify-center gap-2" >
+                        cast.map((c , i) =>
+                            <div key={i} className="flex items-center justify-center gap-2" >
                                 <div className="rounded-full overflow-hidden bg-red-200 w-28 h-28">
                                     <img src={`https://image.tmdb.org/t/p/w300/${c.profile_path}`} alt="" className="w-[113px] bottom-4 relative  " />
                                 </div>
@@ -223,8 +223,8 @@ export default function Info() {
                     dark:[&::-webkit-scrollbar-track]:bg-[#7300FF10]
                     dark:[&::-webkit-scrollbar-thumb]:bg-[#7300FF] py-6">
                     {
-                        similar.map(v =>
-                            <a href="" className="flex-shrink-0 " onClick={() => {
+                        similar.map((v , i) =>
+                            <a href="" key={i} className="flex-shrink-0 " onClick={() => {
                                 navigate(`/${v?.id}?type=${v?.media_type}`)
                             }}>
                                 <img src={`https://image.tmdb.org/t/p/original/${v.backdrop_path}`} alt="" className=" w-72 md:w-96 rounded-xl" />
@@ -237,14 +237,14 @@ export default function Info() {
 
                                         <div className=" flex text-[#a473ff]">
                                             {
-                                                Genre.map(g =>
-                                                    v.genre_ids[0] === g.id ? <span>{g.name}</span> : ''
+                                                Genre.map((g , i) =>
+                                                    v.genre_ids[0] === g.id ? <span key={i}>{g.name}</span> : ''
                                                 )
                                             }
                                             {v.genre_ids[1] ? <Dot /> : ''}
                                             {
                                                 Genre.map(g =>
-                                                    v.genre_ids[1] === g.id ? <span>{g.name}</span> : ''
+                                                    v.genre_ids[1] === g.id ? <span key={i}>{g.name}</span> : ''
                                                 )
                                             }
 
@@ -267,8 +267,8 @@ export default function Info() {
                     dark:[&::-webkit-scrollbar-track]:bg-[#7300FF30]
                     dark:[&::-webkit-scrollbar-thumb]:bg-[#7300FF] py-6">
                     {
-                        review && review.length > 0 ? review.map(v =>
-                            <div className=" border-2 shadow-[#7300FF] shadow-md border-[#7300FF] rounded-3xl w-[350px] md:w-[440px] flex-shrink-0 p-3">
+                        review && review.length > 0 ? review.map((v , i) =>
+                            <div key={i} className=" border-2 shadow-[#7300FF] shadow-md border-[#7300FF] rounded-3xl w-[350px] md:w-[440px] flex-shrink-0 p-3">
                                 <div className="flex items-center gap-3 bg-[#7300FF30] rounded-3xl px-2 py-1">
                                     <div className="border-2 border-[#7300FF] rounded-full w-20 h-20 overflow-hidden p-1">
                                         <img src={v.author_details.avatar_path ? `https://image.tmdb.org/t/p/w200/${v.author_details.avatar_path}` : profil} alt="" className="w-20 h-18 rounded-full" />

@@ -9,7 +9,7 @@ export default function ExploreGenres({ Genre, backdropImage }) {
         return (
             <div className="flex justify-center">
                 <button
-                    className='border border-white rounded-full p-2 absolute bottom-0 right-[40%] md:right-[43%] lg:right-[50%] z-50 bg-[#a473ff50]'
+                    className='border border-white rounded-full p-2 absolute bottom-0 right-[35%] md:right-[43%] lg:right-[50%] z-50 bg-[#a473ff50]'
                     onClick={onClick}>
                     <ChevronRight color="#ffffff" />
                 </button>
@@ -107,7 +107,7 @@ export default function ExploreGenres({ Genre, backdropImage }) {
             <p>See Wide Range of genres you like</p>
             
             <div className="relative top-">
-                <div className="z-50  px-4 lg:px-10 ">
+                <div className="z-50  px-4 lg:px-10 my-6 ">
                     <Slider {...settings} >
                         {
                             listSlice.map((v, i) =>

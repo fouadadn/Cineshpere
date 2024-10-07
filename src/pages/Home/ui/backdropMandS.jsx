@@ -1,6 +1,6 @@
 import { Star } from 'lucide-react';
 import MovieInfo from "./MovieInfo";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 
@@ -21,18 +21,18 @@ export default function Movies({ title, moviesorshows, genre, media_type }) {
                     dark:[&::-webkit-scrollbar-track]:bg-[#7300FF10]
                     dark:[&::-webkit-scrollbar-thumb]:bg-[#7300FF]">
                 {moviesorshows?.map((v, i) =>
-                        <NavLink to={`/${v.id}?type=${media_type}`} >
-                            <div key={i} className="flex-shrink-0" >
+                        <NavLink key={i} to={`/${v.id}?type=${media_type}`} >
+                            <div  className="flex-shrink-0" >
 
                                 <img src={`https://image.tmdb.org/t/p/w500/${v.backdrop_path}`} alt="" className="w-64 rounded-2xl" />
                                 <div >
                                     <h1 className="mt-2 font-bold w-64">{v.title} {v.name}</h1>
                                     <div className="flex mb-10  items-center gap-1">
                                         <Star size={13} color='yellow' fill='yellow' />
-                                        <p className="text-[#7300FF]  items-center flex">
+                                        <div className="text-[#7300FF]  items-center flex">
                                             <span className="text-[#c0a6ff] font-bold">{String(v.vote_average).slice(0, 3)}</span>
                                             <hr className="w-4 text-[#a473ff] rotate-90" />
-                                            <div key={i} className=" ">
+                                            <div>
                                                 <MovieInfo
                                                     genreStyle={'text-[#a473ff] text-sm'}
                                                     descDisplay={'hidden'}
@@ -41,10 +41,8 @@ export default function Movies({ title, moviesorshows, genre, media_type }) {
                                                     Genre={[genre.map((va) => va.id === v.genre_ids[0] ? va.name : ''), genre.map((va) => va.id === v.genre_ids[1] ? va.name : '')]}
                                                 />
                                             </div>
-                                        </p>
+                                        </div>
                                     </div>
-
-
                                 </div>
                             </div>
                         </NavLink>
