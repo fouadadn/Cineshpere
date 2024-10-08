@@ -185,11 +185,11 @@ export default function Info() {
                     {
                         cast.map((c , i) =>
                             <div key={i} className="flex items-center justify-center gap-2" >
-                                <div className="rounded-full overflow-hidden bg-red-200 w-28 h-28">
-                                    <img src={`https://image.tmdb.org/t/p/w300/${c.profile_path}`} alt="" className="w-[113px] bottom-4 relative  " />
+                                <div className="rounded-full overflow-hidden bg-red-200 w-20 h-20">
+                                    <img src={`https://image.tmdb.org/t/p/w300/${c.profile_path}`} alt="" className="w-20 lg:w-[113px] bottom-3 relative  " />
                                 </div>
                                 <div>
-                                    <h1 className="text-nowrap text-2xl text-semibold">{c.name}</h1>
+                                    <h1 className="text-nowrap text-lg md:text-2xl text-semibold">{c.name}</h1>
                                     <span className="text-nowrap text-sm text-[#7300ffe0] ">{c.character}</span>
                                 </div>
                             </div>)
@@ -198,7 +198,7 @@ export default function Info() {
             </div>
 
             {/* watch Triller */}
-            <div>
+            <div className="z-50">
                 <h1 className="text-4xl font-bold my-3 px-4 lg:px-10">Official Trailer</h1>
                 <div className="flex justify-center mb-32 mt-10 " id="trailer">
                     <div className="w-[80%] h-[600px]">

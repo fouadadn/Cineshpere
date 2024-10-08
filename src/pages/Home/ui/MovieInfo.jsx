@@ -1,6 +1,7 @@
 import { Dot, Play, Bookmark } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 
-export default function MovieInfo({ year, name, Genre, desc, position, divDisplay, yearDisplay, descDisplay, genreStyle }) {
+export default function MovieInfo({ year, name, Genre, desc, position, divDisplay, yearDisplay, descDisplay, genreStyle, pstyle , id , media_type }) {
     let y1
     let y2
 
@@ -21,7 +22,15 @@ export default function MovieInfo({ year, name, Genre, desc, position, divDispla
             <span className={`text-sm hidden sm:${yearDisplay}`}>{y1 === undefined ? String(y2).substring(0, 4) : String(y1).substring(0, 4)}</span>
             <h1 className="text-3xl ">{name}</h1>
             <p className={`hidden sm:flex ${genreStyle}`}>{genre1} {xi7aja === '' ? '' : <Dot />} {genre2}</p>
-            <p className={`w-[370px] sm:w-[450px] md:w-[470px] text-xs sm:text-base ${descDisplay}`}>{desc}</p>
+            <div className={`${pstyle}`}>
+                <p className={`w-[370px] sm:w-[450px] md:w-[470px] text-xs sm:text-base ${descDisplay} `}>
+                    <span className=' overflow-hidden inline-block'>
+                        {String(desc).split(' ').slice(0, 19).join(' ')}
+                        <NavLink to={`/${id}?type=${media_type}`} className='text-[#7300FF] ml-1' >  See More</NavLink>
+                    </span>
+
+                </p>
+            </div>
 
             <div className={`flex gap-2 md:gap-4 mt-5 ${divDisplay}`}>
                 <div href=''>

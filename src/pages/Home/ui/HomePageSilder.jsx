@@ -55,7 +55,11 @@ export default function HomePageSlider({ movieDetail , genre}) {
                                     position={'absolute'}
                                     name={[v.title, v.name]} year={[v.release_date, v.first_air_date]}
                                     Genre={[genre.map((va) => va.id === v.genre_ids[0] ? va.name : ''), genre.map((va) => va.id === v.genre_ids[1] ? va.name : '')]}
-                                    desc={v.overview} /> : ''}
+                                    desc={v.overview}
+                                    pstyle={' overflow-hidden'}
+                                    id={v.id}
+                                    media_type={v.media_type}
+                                    /> : ''}
 
                             </div>
                         )
