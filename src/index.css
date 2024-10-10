@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html{
   scroll-behavior: smooth;
 }
@@ -15,9 +14,9 @@ body{
   overflow-x:hidden ;
   background-color: rgb(0, 0, 0); 
   font-family: Arial, Helvetica, sans-serif;
+ 
   
 }
-
 .slick-dots li.slick-active button:before {
     color:#7300FF !important;
     font-size: 20px !important;
@@ -50,7 +49,7 @@ body{
 
   .t9iil{
     animation-name: xi7aja ;
-    animation-duration: 3s;
+    animation-duration: 2s;
   }
 
   @keyframes xi7aja {
@@ -77,10 +76,7 @@ body{
     transition: all 500ms ease-in-out;
     
   }
-  .genresilder{
-    z-index: 99999;
-  }
-
+  
   .slick-active >div > div > p:hover{
     border: 1px solid #8a3bff;
     background-color: #822AEE60;
@@ -98,7 +94,4 @@ body{
   .hhhh{
     transition: all 3s;
   }
-
-  /* .slick-initialized{
-    position: relative;
-  } */
+  

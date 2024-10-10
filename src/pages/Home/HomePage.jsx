@@ -53,7 +53,7 @@ export default function HomePage() {
     return (
         <div className='bg-black w-full flex flex-col'>
             <HomePageSlider movieDetail={topmovies} genre={genre} />
-            <div className='space-y-32 mt-10 flex flex-col'>
+            <div className='space-y-32 mt-10 flex z-50 flex-col'>
                 <MovieAndshowsSlider title={'Latest Release'} moviesorshows={movies} />
                 <MovieAndshowsSlider title={'Trending Movies & Shows'} moviesorshows={topmovies} />
             </div>

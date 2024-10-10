@@ -35,13 +35,13 @@ export default function Nav() {
     const navigate = useNavigate()
 
     return (
-        <div className='relative'>
-            <header className="relative  lg:absolute z-50 flex flex-wrap lg:justify-start lg:flex-nowrap w-full text-sm py-3 md:py-5 ">
-                <nav className="max-w-[95rem] w-full mx-auto px-4 lg:flex md:items-center md:justify-between">
+        <div className='relative z-[1000]'>
+            <header className=" lg:fixed z-50 flex flex-wrap lg:justify-start lg:flex-nowrap w-full text-sm py-2 px-1 ">
+                <nav className="max-w-[95rem] w-full mx-auto px-4 lg:flex md:items-center md:justify-between bg-[#7300FF60] rounded-2xl backdrop-blur-lg   ">
                     <div className="flex items-center justify-between">
                         <NavLink to={'/'}>
-                            <h1 className='text-4xl relative bottom-3 text-white text-nowrap'>
-                                <span className='font- text-[#7300FF] text-6xl'>C</span>ine sphere
+                            <h1 className='text-4xl  text-white text-nowrap flex items-center'>
+                                <span className='font- text-[#7300FF] text-6xl'>C</span><span>ine sphere</span>
                             </h1>
                         </NavLink>
                         <div className="lg:hidden">
@@ -52,13 +52,11 @@ export default function Nav() {
                             </button>
                         </div>
                     </div>
-                    <div id="hs-navbar-example" className="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow lg:block text-white  lg:text-xl " aria-labelledby="hs-navbar-example-collapse">
+                    <div id="hs-navbar-example" className="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow lg:block text-white  lg:text-xl py-3 lg:py-0" aria-labelledby="hs-navbar-example-collapse">
                         <div className="flex flex-col gap-5 mt-5 lg:flex-row lg:items-center lg:justify-end lg:mt-0 md:ps-5">
                             <NavLink to={'/Upcoming'} className='hover:text-[#7300FF] duration-500'>Upcoming</NavLink>
                             <a href="#" className='hover:text-[#7300FF] duration-500'>Shows</a>
                             <a href="#" className='hover:text-[#7300FF] duration-500'>Fanart</a>
-                            <a href="#" className='hover:text-[#7300FF] duration-500'>Plans</a>
-                            <a href="#" className='hover:text-[#7300FF] duration-500'>Community</a>
                             <NavLink to={'/Account'} className='hover:text-[#7300FF] duration-500'>Account</NavLink>
                             <div className={`border bg-[#7300FF10] w-80  border-[#a473ff] rounded-xl flex items-center pr-2`}>
                                 <input
@@ -77,7 +75,7 @@ export default function Nav() {
                 </nav>
             </header>
 
-            <div className={`backdrop-blur-lg rounded-xl bg-black/20 md:w-[50%] h-96  md:left-[50%] p-3 md:absolute z-50 top-28 ${displaySearch} overflow-auto 
+            <div className={`lg:fixed backdrop-blur-lg rounded-xl bg-black/20 xl:w-[50%] h-96  lg:left-[50%] p-3  z-50 top-28 ${displaySearch} overflow-auto 
                     [&::-webkit-scrollbar]:w-1
                     [&::-webkit-scrollbar-track]:rounded-full
                     [&::-webkit-scrollbar-track]:bg-gray-100
@@ -92,10 +90,10 @@ export default function Nav() {
                             movie?.media_type != 'person' ?
                                 <a href='' className='text-white cursor-pointer' onClick={() => navigate(`/${movie?.id}?type=${movie?.media_type}`)}>
                                     <div className='flex justify-start items-center gap-3 m-2'>
-                                        <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w300/${movie?.poster_path}` : "/no-img-found.png"} alt="" className="w-32 rounded-tr-3xl rounded-bl-3xl border-2 border-violet-500 bg-white" />
+                                        <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w300/${movie?.poster_path}` : "/7422bfe15b3ea7b5933dffd896e9c7f9_46003a1b7353dc7b5a02949bd074432a.avif"} alt="" className="w-32 rounded-tr-3xl rounded-bl-3xl border-2 border-violet-500 bg-white" />
                                         <div className='flex flex-col justify-center items-start gap-2'>
                                             <h1 className="md:text-2xl text-lg font-bold">{movie?.title} {movie.name}</h1>
-                                            <p className='text-sm text-gray-200 font-semibold'>{movie?.overview}</p>
+                                            <p className='text-sm text-gray-200 font-semibold'>{String(movie?.overview).split(' ').slice(0 , 30).join(' ')} {String(movie?.overview).split(' ').length < 30 ? '' : <span className='text-[#a473ff]'>see more</span> }</p>
                                             <i className='bg-indigo-500 text-white py-1 px-2 rounded-full capitalize'>{movie?.media_type}</i>
                                         </div>
                                     </div>

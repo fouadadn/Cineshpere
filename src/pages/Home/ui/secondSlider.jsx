@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import Slider from "react-slick";
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 import MovieInfo from "./MovieInfo";
+import { NavLink } from "react-router-dom";
 
 
 export default function SecondSlider() {
@@ -113,9 +114,12 @@ export default function SecondSlider() {
                             tvShows.map((v, i) =>
                                 <div key={i} >
                                     {ShowIndex == i ? <MovieInfo
+                                        id={v.id}
+                                        media_type={v.media_type}
                                         name={[v.title, v.name]} year={[v.release_date, v.first_air_date]}
                                         Genre={[genre?.map((va) => va.id == v.genre_ids[0] ? va.name : ''), genre?.map((va) => va.id == v.genre_ids[1] ? va.name : '')]}
                                         desc={v.overview} /> : ''}
+                                        
                                 </div>
                             )
                         }
@@ -124,9 +128,9 @@ export default function SecondSlider() {
                     <div className=" lg:w-[50%]  left-10 lg:left-0 relative" >
                         <Slider {...settings} >
                             {tvShows.map((v, i) =>
-                                <div key={i} >
+                                <NavLink to={`/${v?.id}?type=${v?.media_type}`} key={i} >
                                     <img src={`https://image.tmdb.org/t/p/w300/${v.poster_path}`} alt="" className="w-32 lg:w-52 border-4 border-[#7300FF] rounded-tr-3xl rounded-bl-3xl" />
-                                </div>
+                                </NavLink>
                             )}
                         </Slider>
                     </div>

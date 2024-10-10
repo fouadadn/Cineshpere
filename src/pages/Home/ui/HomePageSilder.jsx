@@ -15,7 +15,7 @@ export default function HomePageSlider({ movieDetail , genre}) {
         dots: true,
         infinite: true,
         speed: 500,
-        autoplay: true,
+        // autoplay: true,
         // fade : true,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -37,10 +37,8 @@ export default function HomePageSlider({ movieDetail , genre}) {
         ]
 
     };
-    const Movies5 = movieDetail.slice(0, 5)
-
     
-
+    const Movies5 = movieDetail.slice(6, 11)
     return (
         <div>
             <div className="relative ">
@@ -59,6 +57,7 @@ export default function HomePageSlider({ movieDetail , genre}) {
                                     pstyle={' overflow-hidden'}
                                     id={v.id}
                                     media_type={v.media_type}
+                                    poster_path={v.poster_path}
                                     /> : ''}
 
                             </div>

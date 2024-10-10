@@ -15,8 +15,6 @@ import Upcoming from './pages/upcoming/Upcoming.jsx';
 import "preline/preline";
 
 function App() {
-
- 
   return (
     <BrowserRouter>
       <Nav></Nav>
