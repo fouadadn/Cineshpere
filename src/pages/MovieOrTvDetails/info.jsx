@@ -138,7 +138,6 @@ export default function Info() {
         setSeasons(movie.seasons)
     }, [movie])
 
-    console.log(`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`)
 
     return (
         <div className="text-white flex flex-col">
@@ -158,7 +157,7 @@ export default function Info() {
                         <h1 className=" text-3xl lg:text-5xl font-semibold mb-0 md:mb-3">{media_type == 'movie' ? movie.title : movie.name}</h1>
                         <div className="flex items-center gap-2 font-semibold text-lg mb-2">
                             {
-                                media_type == 'tv' ? <p className="text-sm md:text-lg text-nowrap  bg-[#7300FF50]  rounded-lg px-1">{movie.number_of_seasons} Seasons</p> : ''
+                                media_type == 'tv' ? <p className="text-sm md:text-lg text-nowrap  bg-[#7300FF50]  rounded-lg px-1">{movie.number_of_seasons}<span className="opacity-0">.</span>Seasons</p> : ''
                             }
                             <div className=" h-6 overflow-hidden">
                                 {
@@ -175,13 +174,13 @@ export default function Info() {
                         </div>
                         <div className="flex gap-6 ">
                             <a href='#videoplay' className='flex rounded-tr-xl backdrop-blur-lg  bg-[#7300FF] rounded-bl-xl py-1 px-2 md:px-4 md:py-2 gap-1'>
-                                <Play strokeWidth={3} /><span className='text-nowrap'>Watch Now</span>
+                                <Play strokeWidth={3} /><span className='text-nowrap'>Watch<span className="opacity-0">.</span>Now</span>
                             </a>
                             <button className='flex rounded-tr-xl backdrop-blur-lg  bg-[#ffffff10] rounded-bl-xl py-1 px-2 md:px-4 md:py-2 gap-1' onClick={handlechangeDisplayTrailer}>
-                                <Play strokeWidth={3} /><span className='text-nowrap'>Watch Trailer</span>
+                                <Play strokeWidth={3} /><span className='text-nowrap'>Watch<span className="opacity-0">.</span>Trailer</span>
                             </button>
                             <button className=' rounded-tr-xl bg-[#7300FF20] border border-white  rounded-bl-xl py-1 px-2 md:px-4 md:py-2 gap-1 hidden sm:flex'>
-                                <Bookmark strokeWidth={3} /><span className='text-nowrap'>Add to Wishlist</span>
+                                <Bookmark strokeWidth={3} /><span className='text-nowrap'>Add<span className="opacity-0">.</span>to<span className="opacity-0">.</span>Wishlist</span>
                             </button>
 
                         </div>
@@ -191,7 +190,7 @@ export default function Info() {
             </div>
 
             {/* trailer modal  */}
-            <div className={`w-[100vw] h-[100vh] fixed bg-[#000000a4] z-[1000] justify-center items-center flex ${displayModaltrailler ? 'block' : 'hidden'} t9iil`}>
+            <div className={`w-[100vw] -mt-20 lg:mt-0 h-svh   md:h-[120vh] fixed bg-[#000000a4] z-[1000] justify-center items-center flex ${displayModaltrailler ? 'block' : 'hidden'} t9iil`}>
                 <div className='bg-[#7300FF40] backdrop-blur-lg border-[1px] border-[#7300FF80] shadow-2xl  w-[90%]  lg:w-[60%]  rounded-2xl  ml-auto mr-auto t9iil px-3  py-3'>
                     <div className='flex justify-between items-center  rounded-tr-2xl rounded-tl-2xl px-2'>
                         <h1 className="text-4xl font-bold my-3  text-nowrap">Official Trailer</h1>
@@ -237,8 +236,8 @@ export default function Info() {
                                     <img src={`https://image.tmdb.org/t/p/w300/${c.profile_path}`} alt="" className="w-20 lg:w-[113px] bottom-3 relative  " />
                                 </div>
                                 <div>
-                                    <h1 className="text-nowrap text-lg md:text-2xl text-semibold">{c.name}</h1>
-                                    <span className="text-nowrap text-sm text-[#7300ffe0] ">{c.character}</span>
+                                    <h1 className="text-nowrap text-lg md:text-2xl text-semibold">{String(c.name).split(' ').map(v => <><span className="text-white">{v}</span><span className="opacity-0">.</span></> )}</h1>
+                                    <span className="text-nowrap text-sm text-[#7300ffe0] ">{String(c.character).split(' ').map(v => <><span className="text-[#7300FF]">{v}</span><span className="opacity-0">.</span></> )}</span>
                                 </div>
                             </div>)
                     }
@@ -246,7 +245,7 @@ export default function Info() {
             </div>
 
             {/* streming shows */}
-            <div className="px-4 lg:px-10 space-y-7">
+            {/* <div className="px-4 lg:px-10 space-y-7">
                 <h1 className="text-3xl font-bold my-3">{media_type == 'tv' ? '' : "Streaming Movie"}</h1>
                 <div className="flex justify-between items-center relative  h-fit py-10">
                     {media_type == 'tv' ?
@@ -286,7 +285,7 @@ export default function Info() {
 
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* similar movies or tv shows */}
             <div className="mt-32 px-4 lg:px-10">
